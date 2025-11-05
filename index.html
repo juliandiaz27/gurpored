@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Grupo Red Rural — Onepage</title>
+  <meta name="description" content="Grupo con trayectoria en el agro argentino. Innovación, compromiso y crecimiento sostenible."/>
+
+  <!-- FAVICON -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png"/>
+
+  <!-- BOOTSTRAP 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+
+  <!-- Swiper (para carruseles si los usamos) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Google Fonts: Plus Jakarta Sans (200–800, normal + italic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="96" tabindex="0">
+
+  <!-- Header / Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <img src="assets/img/logos/logo-header.png" alt="Grupo Red Rural" >
+        
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Alternar navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#trayectoria">Trayectoria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#empresas">Empresas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#donde">Dónde estamos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="ms-lg-3">
+            <a class="btn btn-primary btn-sm" href="#contacto">Escribinos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-800 lh-tight mb-3 js-split text-white custom-title">
+            Grupo Red Rural
+          </h1>
+          <p class="js-split lead  italic text-white fw-500 fs-25">
+            Innovación, diversidad y compromiso en la agroindustria argentina
+          </p>
+          <p class="js-split lead  fw-600 text-white fs-18">
+            Somos un grupo de seis empresas que aportan soluciones integrales al agro: desde insumos y acopio de granos, hasta corretaje, logística, inversiones y alimentos balanceados.
+          </p>
+
+          <div class=" d-flex gap-3 mt-4 ">
+            <a href="#empresas" class=" btn btn-primary btn-lg bg-transparent border border-3 border-white fw-600">Conocé nuestras empresas</a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bg" role="img" aria-label="Campo de cultivo"></div>
+  </header>
+
+    <!-- TRAYECTORIA -->
+    <section id="trayectoria" class="section fondo-custom">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-8 mb-5">
+
+            <!-- No uses js-split en botones -->
+            <span class="location-badge mb-3 d-inline-flex">Quienes Somos</span>
+            <h2 class="section-title titulo mt-5 fw-800" data-aos="fade-up">
+              Un grupo con más de 15 años de trayectoria en el agro Argentino
+            </h2>
+
+            <p class="texto mt-5 text-black" data-aos="fade-up" data-aos-delay="80">
+              Comenzamos con la comercialización de insumos y semillas, y crecimos acompañando a productores con servicios de acopio de cereales. Hoy, consolidamos un modelo de negocio diversificado que agrega valor en distintos eslabones de la cadena agroindustrial.
+            </p>
+
+            <p class="js-split texto texto-rojo">
+              Creemos en una agroindustria moderna, eficiente y sustentable, que combine productividad, innovación y compromiso con las comunidades.
+            </p>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousel FULL-BLEED (sale del container) -->
+      <div class="full-bleed mt-4">
+        <div class="swiper soft-swiper three" aria-label="Galería de imágenes">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="assets/img/carousel/carousel-1.png" alt="Imagen 1"></div>
+            <div class="swiper-slide"><img src="assets/img/carousel/carousel-2.png" alt="Imagen 2"></div>
+            <div class="swiper-slide"><img src="assets/img/carousel/carousel-3.png" alt="Imagen 3"></div>
+            <!-- duplicados para loop suave -->
+            <div class="swiper-slide"><img src="assets/img/carousel/carousel-1.png" alt="Imagen 1"></div>
+            <div class="swiper-slide"><img src="assets/img/carousel/carousel-2.png" alt="Imagen 2"></div>
+            <div class="swiper-slide"><img src="assets/img/carousel/carousel-3.png" alt="Imagen 3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- EMPRESAS -->
+    <section id="empresas" class="section bg-light fondo-custom">
+      <div class="container">
+        <div class="row justify-content-center text-center mb-5">
+          <div class="col-lg-8">
+            <span class="location-badge mb-3 d-inline-flex">Empresas del grupo</span>
+            <h2 class="section-title " data-aos="fade-up">Seis empresas, un mismo compromiso</h2>
+            <p class="text-body-secondary" data-aos="fade-up" data-aos-delay="80">
+              Abordamos distintas verticales del negocio con una visión compartida.
+            </p>
+          </div>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          <!-- Red Rural -->
+          <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="company-item h-100 text-center">
+              <a href="#" class="logo-box">
+                <span class="topline" aria-hidden="true"></span>
+                <img src="assets/img/empresas/red-rural.png" alt="Red Rural" width="160" height="72">
+              </a>
+              <div class="company-body ">
+                <h5 class="mb-2">Red Rural</h5>
+                <p class="small text-body-secondary mb-3">
+                  Comercialización de insumos y servicios de acopio en Entre Ríos.
+                </p>
+                <a href="#" class="link-more">Conocé más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- JV Agra -->
+          <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="company-item h-100 text-center">
+              <a href="#" class="logo-box">
+                <span class="topline" aria-hidden="true"></span>
+                <img src="assets/img/empresas/jv.png" alt="JV Agra" width="160" height="72">
+              </a>
+              <div class="company-body">
+                <h5 class="mb-2">JV Agra</h5>
+                <p class="small text-body-secondary mb-3">
+                  Corretaje de cereales y logística. Profesionalismo y eficiencia en cada transacción.
+                </p>
+                <a href="#" class="link-more">Conocé más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gepián -->
+          <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="company-item h-100 text-center">
+              <a href="#" class="logo-box">
+                <span class="topline" aria-hidden="true"></span>
+                <img src="assets/img/empresas/gepian.png" alt="Gepián" width="160" height="72">
+              </a>
+              <div class="company-body">
+                <h5 class="mb-2">Gepián</h5>
+                <p class="small text-body-secondary mb-3">
+                  Maquinaria y herramientas agrícolas, con asesoramiento técnico personalizado.
+                </p>
+                <a href="#" class="link-more">Conocé más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Futura AG -->
+          <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="company-item h-100 text-center">
+              <a href="#" class="logo-box">
+                <span class="topline" aria-hidden="true"></span>
+                <img src="assets/img/empresas/futura.png" alt="Futura AG" width="160" height="72">
+              </a>
+              <div class="company-body">
+                <h5 class="mb-2">Futura AG</h5>
+                <p class="small text-body-secondary mb-3">
+                  Inversiones en futuros agrícolas para mitigar riesgos y planificar con visión financiera.
+                </p>
+                <a href="#" class="link-more">Conocé más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quadrifoglio -->
+          <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="company-item h-100 text-center">
+              <a href="#" class="logo-box">
+                <span class="topline" aria-hidden="true"></span>
+                <img src="assets/img/empresas/quadrifoglio.png" alt="Quadrifoglio" width="160" height="72">
+              </a>
+              <div class="company-body">
+                <h5 class="mb-2">Quadrifoglio</h5>
+                <p class="small text-body-secondary mb-3">
+                  Soluciones y desarrollos a medida para el sector agroindustrial.
+                </p>
+                <a href="#" class="link-more">Conocé más</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Polifood -->
+          <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="company-item h-100 text-center">
+              <a href="#" class="logo-box">
+                <span class="topline" aria-hidden="true"></span>
+                <img src="assets/img/empresas/polifood.png" alt="Polifood" width="160" height="72">
+              </a>
+              <div class="company-body">
+                <h5 class="mb-2">Polifood</h5>
+                <p class="small text-body-secondary mb-3">
+                  Alimentos balanceados premium para perros y gatos.
+                </p>
+                <a href="#" class="link-more">Conocé más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <!-- VISIÓN / VALORES -->
+  <section id="vision" class="section">
+    <div class="container">
+      <div class="vstack gap-4 align-items-start mb-5">
+
+      <span class="location-badge mb-3 d-inline-flex">Visión</span>
+      <h2 class="section-title" data-aos="fade-left">Nuestra visión</h2>
+      <p class="text-body-secondary" data-aos="fade-left" data-aos-delay="80">El agro es uno de los pilares del desarrollo productivo, económico y social de la Argentina. Queremos ser un actor relevante dentro de esta red, generando soluciones concretas a los desafíos actuales y futuros del campo.</p>
+      </div>
+      
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <img src="assets/img/vision-principal.png" class="img-fluid rounded-3 shadow-sm" alt="Visión">
+        </div>
+        <div class="col-lg-6">
+          
+          
+          <div class="row g-3 mt-3">
+            <div class="col-sm-6" data-aos="fade-up">
+              <div class="value-item custom-icon">
+                <img src="assets/img/iconos/Frame 30.png" alt="" width="20" class="me-2"> 
+                <p>Transparencia</p>
+              </div>
+            </div>
+            <div class="col-sm-6 " data-aos="fade-up" data-aos-delay="80">
+              <div class="value-item custom-icon">
+                <img src="assets/img/iconos/innovacion.png" alt="" width="20" class="me-2"> 
+                <p>Innovación al servicio del productor</p>
+              </div>
+            </div>
+            <div class="col-sm-6 " data-aos="fade-up" data-aos-delay="120">
+              <div class="value-item custom-icon">
+                <img src="assets/img/iconos/sustentabilidad.png" alt="" width="20" class="me-2"> 
+                <p>Sustentabilidad y cuidado del ambiente</p>
+              </div>
+            </div>
+            <div class="col-sm-6 " data-aos="fade-up" data-aos-delay="160">
+              <div class="value-item custom-icon">
+                <img src="assets/img/iconos/compromiso.png" alt="" width="20" class="me-2"> 
+                <p>Compromiso con comunidades locales</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DÓNDE ESTAMOS -->
+  <section id="donde" class="section bg-light">
+    <div class="container">
+
+      <!-- Fila superior: título/copy + sucursales -->
+      <div class="row g-4 align-items-start mb-4">
+        <!-- Izquierda -->
+        <div class="col-lg-7">
+          <span class="location-badge mb-3 d-inline-flex">Ubicación</span>
+          <h2 class="section-title mb-3" data-aos="fade-up">
+            Estamos donde tenemos que estar
+          </h2>
+          <p class="text-body-secondary mb-0" data-aos="fade-up" data-aos-delay="80">
+            Contamos con sucursales en locaciones esenciales y estratégicas
+            para el desarrollo de nuestra producción y el beneficio de nuestros clientes.
+          </p>
+        </div>
+
+        <!-- Derecha: sucursales -->
+        <div class="col-lg-5">
+          <ul class="location-list list-unstyled m-0">
+            <li class="d-flex align-items-start gap-3 mb-3" data-aos="fade-left">
+              <span class="loc-pin" aria-hidden="true">
+                <!-- Pin SVG -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/>
+                  <circle cx="12" cy="10" r="2.5" fill="#fff"/>
+                </svg>
+              </span>
+              <div>
+                <div class="fw-700">Casa Central</div>
+                <div class="small text-body-secondary">Strobel, Entre Ríos</div>
+              </div>
+            </li>
+            <li class="d-flex align-items-start gap-3" data-aos="fade-left" data-aos-delay="80">
+              <span class="loc-pin" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/>
+                  <circle cx="12" cy="10" r="2.5" fill="#fff"/>
+                </svg>
+              </span>
+              <div>
+                <div class="fw-700">Sucursales en Entre Ríos</div>
+                <div class="small text-body-secondary">Bovril, Cerrito, Rosario del Tala, San Salvador</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card del mapa -->
+      <div class="map-card" data-aos="zoom-in">
+        <div class="ratio ratio-21x9">
+          <img src="assets/img/mapa.png"
+              class="w-100 h-100 object-fit-cover" alt="Mapa de cobertura">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- CONTACTO -->
+  <!-- Sección CONTACTO full-bleed -->
+    <section id="contacto" class="contact-band ">
+      <div class="row g-0 align-items-center">
+        <!-- Izquierda: card alineada al container del sitio -->
+        <div class="col-lg-6">
+          <div class="container p-5 fs-48 contacto-custom">
+            <div class="contact-card p-5">
+              <h3 class="mb-2 ">Contactanos</h3>
+              <p class="text-body-secondary mb-4 fs-18">
+                Escribinos o llamanos para conocer más sobre el Grupo Red Rural y sus empresas.
+              </p>
+
+              <ul class="contact-list list-unstyled m-0">
+                <li class="d-flex align-items-start gap-3">
+                  <span class="icon-pill"><img src="/assets/img/iconos/telefono.png" alt=""></span>
+                  <div>
+                    <div class="fw-700">Teléfono</div>
+                    <a href="tel:+5493435725753" class="contact-link">+54 9 3435 72-5753</a>
+                  </div>
+                </li>
+                <li class="d-flex align-items-start gap-3">
+                  <span class="icon-pill"><img src="/assets/img/iconos/wsp.png" alt=""></span>
+                  <div>
+                    <div class="fw-700">WhatsApp</div>
+                    <a href="https://wa.me/5493435725753?text=Hola%20Grupo%20Red%20Rural"
+                      target="_blank" class="contact-link">+54 9 3431 504-9525</a>
+                  </div>
+                </li>
+                <li class="d-flex align-items-start gap-3">
+                  <span class="icon-pill"><img src="/assets/img/iconos/email.png" alt=""></span>
+                  <div>
+                    <div class="fw-700">Correo electrónico</div>
+                    <a href="mailto:info@redrural.net.ar" class="contact-link">info@redrural.net.ar</a>
+                  </div>
+                </li>
+              </ul>
+
+             
+            </div>
+          </div>
+        </div>
+
+        <!-- Derecha: imagen a todo alto/ancho -->
+        <div class="col-lg-6 gg">
+          
+            <img src="assets/img/contacto.png" alt="Equipo trabajando en el campo">
+          
+        </div>
+      </div>
+    </section>
+
+
+
+  <!-- FOOTER -->
+  <footer class="py-4 px-5 row g-0 align-items-center footer">
+    <div class="container px-5 d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <img src="/assets/img/logos/logo-white.png" alt="">
+      <div class="small text-white">© <span id="year"></span> Grupo Red Rural</div>
+      <div class="small text-white ">Diseñado y desarrollado por <a href="www.gaucho.digital" class="text-white bold">Gaucho Digital</a></div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="toTop" class="btn btn-primary rounded-circle to-top" aria-label="Volver arriba">↑</button>
+
+  <!-- Scripts: Bootstrap, Swiper, GSAP, AOS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
