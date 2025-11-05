@@ -71,7 +71,7 @@ body{ font-optical-sizing:auto; }
 .hero{ min-height: 88vh; position:relative; }
 .hero .hero-bg{
   position:absolute; inset:0; z-index:-1;
-  background-image: url('assets/img/hero.jpg');
+  background-image: url('/assets/img/imagen-principal.png');
   background-size: cover; background-position: center;
   filter: saturate(1.05) contrast(1.02);
 }
