@@ -33,6 +33,16 @@ body {
 
 .fs-25 { font-size: 1.5625rem; }
 .fs-18 { font-size: 1.2rem; }
+
+
+/* sm */ @media (min-width: 576px){}
+/* md */ @media (min-width: 768px){}
+/* lg */ @media (min-width: 992px){}
+/* xl */ @media (min-width:1200px){}
+/* xxl*/ @media (min-width:1400px){}
+
+
+
 /* Estilos rápidos */
 .italic { font-style: italic; }
 .no-italic { font-style: normal; }
@@ -501,4 +511,50 @@ font-weight: 900;
 
 .contacto-custom p{
   color: black !important;
+}
+
+
+/* ==== Base = MOBILE ==== */
+.custom-title{ font-size: 2.2rem; line-height: 1.1; }
+.section-title{ font-size: 1.8rem; }
+.fs-25{ font-size: 1.05rem; }   /* tu helper, más chico en cel */
+.fs-18{ font-size: .95rem; }
+.hero{ min-height: 68vh; }
+.contact-card{ padding: 20px; }
+.soft-swiper{ height: 240px; }
+
+/* Cambiar imagen de fondo en mobile (si querés otra) */
+.hero .hero-bg{
+  background-image: url("../img/imagen-principal-mobile.png");
+  background-position: center;
+  background-size: cover;
+}
+
+/* ==== sm+ (>=576px) ==== */
+@media (min-width:576px){
+  .custom-title{ font-size: 2.8rem; }
+  .section-title{ font-size: 2.2rem; }
+  .soft-swiper{ height: 300px; }
+}
+
+/* ==== md+ (>=768px) ==== */
+@media (min-width:768px){
+  .custom-title{ font-size: 3.6rem; }
+  .section-title{ font-size: 2.6rem; }
+  .hero{ min-height: 80vh; }
+  .contact-card{ padding: 32px; }
+  /* En desktop volvés a la imagen grande */
+  .hero .hero-bg{ background-image: url("../img/imagen-principal.png"); }
+}
+
+/* ==== lg+ (>=992px) ==== */
+@media (min-width:992px){
+  .custom-title{ font-size: 4.2rem; }
+  .section-title{ font-size: 3rem; }
+  .soft-swiper{ height: 380px; }
+}
+
+/* ==== xl+ (>=1200px) ==== */
+@media (min-width:1200px){
+  .custom-title{ font-size: 5rem; }
 }
