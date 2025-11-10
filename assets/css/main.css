@@ -7,6 +7,37 @@
 
 /* Activar variable font y tamaño óptico si está disponible */
 html { font-variation-settings: normal; }
+/* Botón flotante de WhatsApp */
+.wapp-float{
+  position: fixed;
+  right: 4rem;
+  top: 558px;
+  width: 24px;
+  height: 24px;
+  z-index: 9999;
+  transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+.wapp-float svg{
+  width: 64%;
+  height: 64%;
+  display: block;
+}
+.wapp-float:hover{
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0,0,0,.28);
+  filter: saturate(1.1);
+}
+
+/* Tamaño más chico en mobile */
+@media (max-width: 576px){
+  .wapp-float{
+    right: 1rem;
+    bottom: 14px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
 body {
   font-family: var(--font-sans);
   font-optical-sizing: auto; /* usa 'opsz' si la fuente lo soporta */
@@ -184,7 +215,7 @@ body{ font-optical-sizing:auto; }
 }
 
 .to-top{
-  position:fixed; right:1rem; bottom:1rem; width:46px; height:46px; display:none;
+  position:fixed; left:1rem; bottom:1rem; width:46px; height:46px; display:none;
 }
 
 /* Brand */
