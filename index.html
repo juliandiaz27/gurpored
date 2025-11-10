@@ -24,14 +24,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
-  
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+
 
 
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="96" tabindex="0">
 
   <!-- Header / Navbar -->
-  <nav id="navbar" class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
         <img src="./assets/img/logos/logo-header.png" alt="Grupo Red Rural" >
@@ -42,14 +43,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#trayectoria">Trayectoria</a></li>
+          
+          <li class="nav-item"><a class="nav-link" href="#quienessomos">Quienes Somos</a></li>
           <li class="nav-item"><a class="nav-link" href="#empresas">Empresas</a></li>
           <li class="nav-item"><a class="nav-link" href="#vision">Visión</a></li>
-          <li class="nav-item"><a class="nav-link" href="#donde">Dónde estamos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#donde">Ubicación</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
           <li class="ms-lg-3">
-            <a class="btn btn-primary btn-sm" href="#contacto">Escribinos</a>
+              <a class="btn btn-primary btn-sm d-inline-flex align-items-center gap-2" href="#contacto">
+                
+                <!-- pega uno de los SVGs acá -->
+                <img src="./assets/img/iconos/arrow-header.svg" alt="" width="20" height="20">
+                Extranet
+              </a>
           </li>
         </ul>
       </div>
@@ -72,7 +78,7 @@
           </p>
 
           <div class=" d-flex gap-3 mt-4 ">
-            <a href="#empresas" class=" btn btn-primary btn-lg bg-transparent border border-3 border-white fw-600 fs-18">Conocé nuestras empresas</a>
+              <a href="#empresas" class="btn btn-lg btn-hero border border-3 fw-600 fs-18">Conocé nuestras empresas</a>
             
           </div>
         </div>
@@ -82,7 +88,7 @@
   </header>
 
     <!-- TRAYECTORIA -->
-    <section id="trayectoria" class="section fondo-custom">
+    <section id="quienessomos" class="section fondo-custom">
       <div class="container">
         <div class="row justify-content-center text-center">
           <div class="col-lg-8 mb-5">
@@ -106,19 +112,18 @@
       </div>
 
       <!-- Carousel FULL-BLEED (sale del container) -->
+      <!-- Carrusel continuo full-bleed -->
       <div class="full-bleed mt-4">
-        <div class="swiper soft-swiper three" aria-label="Galería de imágenes">
+        <div class="swiper auto-carousel" aria-label="Galería de imágenes">
           <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="./assets/img/carousel/carousel-1.png" alt="Imagen 1"></div>
             <div class="swiper-slide"><img src="./assets/img/carousel/carousel-2.png" alt="Imagen 2"></div>
             <div class="swiper-slide"><img src="./assets/img/carousel/carousel-3.png" alt="Imagen 3"></div>
-            <!-- duplicados para loop suave -->
-            <div class="swiper-slide"><img src="./assets/img/carousel/carousel-1.png" alt="Imagen 1"></div>
-            <div class="swiper-slide"><img src="./assets/img/carousel/carousel-2.png" alt="Imagen 2"></div>
-            <div class="swiper-slide"><img src="./assets/img/carousel/carousel-3.png" alt="Imagen 3"></div>
+            <!-- podés agregar más slides si querés -->
           </div>
         </div>
       </div>
+
     </section>
 
 
@@ -130,13 +135,13 @@
           <div class="col-lg-8">
             <span class="location-badge mb-3 d-inline-flex" data-aos="fade-up ">Empresas del grupo</span>
             <h2 class="section-title " data-aos="fade-up">Seis empresas, un mismo compromiso</h2>
-            <p class="text-body-secondary" data-aos="fade-up" data-aos-delay="80">
+            <p class="text-body-secondary text-black" data-aos="fade-up" data-aos-delay="80">
               Abordamos distintas verticales del negocio con una visión compartida.
             </p>
           </div>
         </div>
 
-        <div class="row g-4 align-items-stretch">
+        <div class="row g-5 align-items-stretch">
           <!-- Red Rural -->
           <div class="col-12 col-md-6 col-lg-4" data-aos="zoom-in">
             <div class="company-item h-100 text-center">
@@ -147,7 +152,8 @@
               <div class="company-body ">
                 <h5 class="mb-2">Red Rural</h5>
                 <p class="small text-body-secondary mb-3">
-                  Comercialización de insumos y servicios de acopio en Entre Ríos.
+                  Comercialización de insumos y servicios 
+                  de acopio en Entre Ríos.
                 </p>
                 <a href="#" class="link-more">Conocé más</a>
               </div>
@@ -164,7 +170,7 @@
               <div class="company-body">
                 <h5 class="mb-2">JV Agra</h5>
                 <p class="small text-body-secondary mb-3">
-                  Corretaje de cereales y logística. Profesionalismo y eficiencia en cada transacción.
+                 Corretaje de cereales y logística. Profesionalismo y eficiencia en cada transacción.
                 </p>
                 <a href="#" class="link-more">Conocé más</a>
               </div>
@@ -181,7 +187,7 @@
               <div class="company-body">
                 <h5 class="mb-2">Gepián</h5>
                 <p class="small text-body-secondary mb-3">
-                  Maquinaria y herramientas agrícolas, con asesoramiento técnico personalizado.
+                 Maquinaria y herramientas agrícolas, con asesoramiento técnico personalizado.
                 </p>
                 <a href="#" class="link-more">Conocé más</a>
               </div>
@@ -198,7 +204,8 @@
               <div class="company-body">
                 <h5 class="mb-2">Futura AG</h5>
                 <p class="small text-body-secondary mb-3">
-                  Inversiones en futuros agrícolas para mitigar riesgos y planificar con visión financiera.
+                  Inversiones en futuros agrícolas para 
+mitigar riesgos y planificar con visión financiera.
                 </p>
                 <a href="#" class="link-more">Conocé más</a>
               </div>
@@ -232,7 +239,7 @@
               <div class="company-body">
                 <h5 class="mb-2">Polifood</h5>
                 <p class="small text-body-secondary mb-3">
-                  Alimentos balanceados premium para perros y gatos.
+                  Alimentos balanceados premium para perros y gatos, elaborados con materias primas seleccionadas.
                 </p>
                 <a href="#" class="link-more">Conocé más</a>
               </div>
@@ -296,41 +303,35 @@
     <div class="container">
 
       <!-- Fila superior: título/copy + sucursales -->
-      <div class="row g-4 align-items-start mb-4">
+      <div class="row g-4 align-items-end mb-5 ">
         <!-- Izquierda -->
         <div class="col-lg-7">
           <span class="location-badge mb-3 d-inline-flex">Ubicación</span>
           <h2 class="section-title mb-3" data-aos="fade-up">
-            Estamos donde tenemos que estar
+            Estamos donde <br> tenemos que estar
           </h2>
-          <p class="text-body-secondary mb-0" data-aos="fade-up" data-aos-delay="80">
+          <p class="text-body-secondary text-black mb-0" data-aos="fade-up" data-aos-delay="80">
             Contamos con sucursales en locaciones esenciales y estratégicas
             para el desarrollo de nuestra producción y el beneficio de nuestros clientes.
           </p>
         </div>
 
         <!-- Derecha: sucursales -->
-        <div class="col-lg-5">
+        <div class="col-lg-5 ">
           <ul class="location-list list-unstyled m-0">
-            <li class="d-flex align-items-start gap-3 mb-3" data-aos="fade-left">
+            <li class="d-flex align-items-end gap-3 mb-3" data-aos="fade-left">
               <span class="loc-pin" aria-hidden="true">
                 <!-- Pin SVG -->
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/>
-                  <circle cx="12" cy="10" r="2.5" fill="#fff"/>
-                </svg>
+                <img src="./assets/img/iconos/mapa.png" alt="">
               </span>
               <div>
                 <div class="fw-700">Casa Central</div>
                 <div class="small text-body-secondary">Strobel, Entre Ríos</div>
               </div>
             </li>
-            <li class="d-flex align-items-start gap-3" data-aos="fade-left" data-aos-delay="80">
+            <li class="d-flex align-items-end gap-3" data-aos="fade-left" data-aos-delay="80">
               <span class="loc-pin" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="currentColor"/>
-                  <circle cx="12" cy="10" r="2.5" fill="#fff"/>
-                </svg>
+                <img src="./assets/img/iconos/mapa.png" alt="">
               </span>
               <div>
                 <div class="fw-700">Sucursales en Entre Ríos</div>
@@ -344,7 +345,7 @@
       <!-- Card del mapa -->
       <div class="map-card" data-aos="zoom-in">
         <div class="ratio ratio-21x9">
-          <img src="./assets/img/mapa.png"
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.59037036521!2d-60.61379498852371!3d-32.053277373865896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5cd1cd7b10f97%3A0x85cfd6d530966567!2sBv.%20de%20La%20Soberania%2C%20Strobel%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses-419!2sar!4v1762788473862!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               class="w-100 h-100 object-fit-cover" alt="Mapa de cobertura">
         </div>
       </div>

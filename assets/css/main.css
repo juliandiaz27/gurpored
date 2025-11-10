@@ -13,6 +13,34 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* Fuente de títulos */
+:root{
+  --font-heading: "Satoshi", system-ui, -apple-system, "Segoe UI",
+                  Roboto, "Helvetica Neue", Arial, "Noto Sans",
+                  "Liberation Sans", sans-serif;
+}
+
+/* Aplica Satoshi SOLO a títulos */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.custom-title {
+  font-family: var(--font-heading);
+  font-weight: 800;              /* ajustá: 700/800/900 según diseño */
+  letter-spacing: .005em;        /* un pelín de tracking */
+}
+
+/* Utilidad opcional por si querés usarlo en algún bloque específico */
+.heading-satoshi { font-family: var(--font-heading) !important; }
+
+/* Pesos útiles rápidos (si los necesitás) */
+.fw-700 { font-weight: 700; }
+.fw-800 { font-weight: 800; }
+.fw-900 { font-weight: 900; }
+
+/* Escalas responsivas opcionales para títulos */
+h1, .custom-title { font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 1.08; }
+h2, .section-title { font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1.12; }
+
 .boton-custom{
   background-color:#FFF1F0;color:#AD0A04;border-radius:46px;padding-top:10px;font-weight: 500;
 }
@@ -61,8 +89,8 @@ small, .small { font-weight: 400; }
   color: black;
 }
 :root{
-  --brand:#e31d1d; /* rojo ejemplo */
-  --brand-600:#c11414;
+  --brand:#AD0A04; /* rojo ejemplo */
+  --brand-600:#AD0A04;
   --text:#111;
   --boton:#FFF1F0;
 }
@@ -76,6 +104,53 @@ body{ font-optical-sizing:auto; }
 /* Header */
 .navbar .nav-link{ padding: .5rem 1rem; }
 .navbar .nav-link.active{ color: var(--brand); }
+/* Estado inicial (sobre hero): fondo transparente, texto/blanco */
+#navbar{
+  background: transparent;
+  transition: background-color .25s ease, box-shadow .25s ease, color .25s ease;
+}
+#navbar .nav-link{ color:#fff; }
+#navbar .nav-link.active{ color:#fff; opacity:.85; }
+#navbar .btn-nav{ 
+  background: transparent; 
+  color:#fff; 
+  border:2px solid #fff;
+}
+
+/* Al scrollear: fondo blanco, texto/negro */
+#navbar.scrolled{
+  background:#fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+#navbar.scrolled .nav-link{ color:#111; }
+#navbar.scrolled .nav-link.active{ color:#111; opacity:1; }
+#navbar.scrolled .btn-nav{
+  background: var(--brand, #AD0A04);
+  color:#fff;
+  border-color: var(--brand,#AD0A04);
+}
+.text-body-secondary{
+  color: black !important;
+}
+/* Opcional: alternar logo claro/oscuro con data attrs o clases */
+.navbar-brand img.logo-light{ display:block; }
+.navbar-brand img.logo-dark{ display:none; }
+#navbar.scrolled .navbar-brand img.logo-light{ display:none; }
+#navbar.scrolled .navbar-brand img.logo-dark{ display:block; }
+
+/* Mobile: al abrir el menú, usá esquema oscuro sobre fondo blanco */
+@media (max-width: 991.98px){
+  #navbar,
+  #navbar.scrolled,
+  #navContent.show{ background:#fff; }
+  #navContent.show .nav-link{ color:#111; }
+  #navContent.show .btn-nav{
+    background: var(--brand, #AD0A04);
+    color:#fff;
+    border-color: var(--brand, #AD0A04);
+  }
+}
+
 
 /* Hero */
 .hero{ min-height: 88vh; position:relative; }
@@ -217,7 +292,7 @@ font-weight: 900;
   font-weight: 900;
 }
 :root{
-  --brand:#e31d1d;
+  --brand:#AD0A04;
   --card-bd: rgba(0,0,0,.06);
 }
 
@@ -290,7 +365,7 @@ font-weight: 900;
   .partner-cta::after{ transition: none !important; }
 }
 :root{
-  --brand: #e31d1d;
+  --brand: #AD0A04;
   --card-bd: rgba(0,0,0,.08);
   --radius: 16px;
 }
@@ -329,6 +404,7 @@ font-weight: 900;
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 6px;
+  
 }
 .logo-box .topline::before{
   content: "";
@@ -437,12 +513,7 @@ font-weight: 900;
 
 /* Pin rojo */
 .loc-pin{
-  width: 34px; height: 34px;
-  border-radius: 999px;
-  background: var(--brand, #e31d1d);
-  color: #fff;
-  display: grid; place-items: center;
-  flex: 0 0 34px;
+  
 }
 
 /* Card del mapa */
@@ -492,7 +563,7 @@ font-weight: 900;
   border-color: rgba(0,0,0,.14);
 }
 .form-control:focus{
-  border-color: var(--brand, #e31d1d);
+  border-color: var(--brand, #AD0A04);
   box-shadow: 0 0 0 .2rem rgba(227,29,29,.15);
 }
 .contact-band img{
@@ -557,4 +628,137 @@ font-weight: 900;
 /* ==== xl+ (>=1200px) ==== */
 @media (min-width:1200px){
   .custom-title{ font-size: 5rem; }
+}
+/* === TOP LINE SIEMPRE VISIBLE (sin animación) === */
+
+/* Variante antigua con partner-card */
+.partner-topline{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--brand);   /* línea roja fija */
+}
+
+/* Variante actual con logo-box */
+.logo-box .topline{
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--brand);   /* línea roja fija */
+}
+
+/* anular animaciones previas si quedaron */
+.partner-topline::before,
+.logo-box .topline::before{
+  content: none !important;
+  transition: none !important;
+  transform: none !important;
+}
+
+/* === EFECTO ZOOM EN HOVER (card) === */
+
+/* partner-card */
+.partner-card{
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+}
+.partner-card:hover,
+.partner-card:focus-visible{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+
+/* logo-box (la caja blanca del logo) */
+.logo-box{
+  transition: transform .25s ease, box-shadow .25s ease;
+  will-change: transform;
+}
+.logo-box:hover,
+.logo-box:focus-visible{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,.12);
+}
+
+/* Opcional: leve zoom del logo dentro para acompañar */
+.logo-box:hover img,
+.logo-box:focus-visible img{
+  transform: scale(1.03);
+  transition: transform .25s ease;
+}
+
+/* Respeto a reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .partner-card,
+  .logo-box,
+  .logo-box img{
+    transition: none !important;
+    transform: none !important;
+  }
+}
+/* Botón del hero: borde blanco, fondo transparente */
+.btn-hero{
+  --hero-border: #fff;
+  color: #fff;
+  background: transparent;
+  border-color: var(--hero-border);
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
+}
+
+/* Hover: fondo blanco, texto color marca */
+.btn-hero:hover,
+.btn-hero:focus{
+  background: #fff;
+  color: var(--brand);        /* usa #AD0A04 desde :root */
+  border-color: #fff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+/* Active: un pelín más oscuro si querés */
+.btn-hero:active{
+  background: #fff;
+  color: var(--brand-600);
+  transform: translateY(0);
+}
+
+/* Opcional: para usuarios con reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .btn-hero{ transition: none; }
+}
+/* Carrusel continuo */
+.auto-carousel{
+  height: clamp(220px, 28vw, 340px);
+  width: 100%;
+  overflow: hidden;
+  padding-inline: 12px;   /* leve gutter lateral */
+}
+
+.auto-carousel .swiper-wrapper{
+  transition-timing-function: linear !important; /* movimiento parejo */
+  will-change: transform;
+  transform: translateZ(0); /* acelera GPU */
+}
+
+.auto-carousel .swiper-slide{
+  height: 100%;
+  /* ancho flexible según breakpoint */
+}
+
+.auto-carousel img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;        /* sin radios, dejalo si querés recto */
+}
+
+/* Cuántas se ven por viewport */
+@media (max-width: 575.98px){
+  .auto-carousel .swiper-slide{ width: 88%; }  /* ~1.1 por vista */
+}
+@media (min-width: 576px) and (max-width: 991.98px){
+  .auto-carousel .swiper-slide{ width: calc(50% - 12px); } /* 2 por vista */
+}
+@media (min-width: 992px){
+  .auto-carousel .swiper-slide{ width: calc(33.333% - 16px); } /* 3 por vista */
 }

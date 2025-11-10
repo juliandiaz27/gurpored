@@ -11,9 +11,13 @@ AOS.init({
 
 // GSAP: split simple por palabras y animación
 function splitWords(el){
-  const text = el.innerHTML;
-  const words = text.split(/\s+/);
-  el.innerHTML = words.map(w => `<span class="word d-inline-block overflow-hidden"><span class="inner d-inline-block">${w}</span></span>`).join(' ');
+  // quita espacios/saltos al principio y al final
+  const text = el.textContent.trim();
+  const words = text.split(/\s+/); // compacta cualquier cantidad de espacios
+
+  el.innerHTML = words
+    .map(w => `<span class="word d-inline-block overflow-hidden"><span class="inner d-inline-block">${w}</span></span>`)
+    .join(' '); // inserta un único espacio entre palabras
 }
 document.querySelectorAll('.js-split').forEach(el => {
   splitWords(el);
@@ -28,17 +32,53 @@ document.querySelectorAll('.js-split').forEach(el => {
   });
 });
 
-// Sticky active links (ScrollSpy ya está en body via data-attrs)
+// ===== Navbar: fondo/colores según scroll + mobile toggle =====
 const nav = document.getElementById('navbar');
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
+const toTop = document.getElementById('toTop');
+const collapse = document.getElementById('navContent');
+
+function updateNavbarOnScroll() {
   const y = window.scrollY || window.pageYOffset;
+  const THRESHOLD = 60;
+
+  if (y > THRESHOLD) {
+    nav.classList.add('scrolled');           // activa tu CSS: fondo blanco + texto negro
+    nav.setAttribute('data-bs-theme', 'light'); // íconos/links oscuros
+  } else {
+    nav.classList.remove('scrolled');        // transparente sobre el hero
+    nav.setAttribute('data-bs-theme', 'dark');  // íconos/links claros
+  }
+
+  // sombra suave (opcional)
   nav.classList.toggle('shadow-sm', y > 2);
-  // botón toTop
-  const toTop = document.getElementById('toTop');
-  if(y > 600){ toTop.style.display = 'block'; } else { toTop.style.display = 'none'; }
-  lastScroll = y;
-});
+
+  // botón back-to-top (si existe)
+  if (toTop) toTop.style.display = y > 600 ? 'block' : 'none';
+}
+
+// Aplica al cargar y al scrollear
+window.addEventListener('load', updateNavbarOnScroll);
+window.addEventListener('scroll', updateNavbarOnScroll);
+
+// Mejor UX en mobile: si el menú se abre arriba de todo, forzá tema claro
+if (collapse) {
+  collapse.addEventListener('show.bs.collapse', () => {
+    nav.classList.add('scrolled');
+    nav.setAttribute('data-bs-theme', 'light');
+  });
+  collapse.addEventListener('hidden.bs.collapse', () => {
+    // al cerrar, volvemos al estado que corresponda por scroll
+    updateNavbarOnScroll();
+  });
+}
+
+// (Opcional) back-to-top con smooth
+if (toTop) {
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 
 // Smooth scroll para enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -62,91 +102,45 @@ document.getElementById('toTop').addEventListener('click', () => {
 
 
 
-// Carousel continuo, sin flechas ni puntos
-const softSwiper = new Swiper('.soft-swiper', {
-  loop: true,
-  slidesPerView: 1,
-  allowTouchMove: false,          // sin interacción del usuario
-  speed: 12000,                   // 12s por transición (ajustá “suavidad”)
-  autoplay: {
-    delay: 0,                     // empieza de inmediato
-    disableOnInteraction: false,
-    // pauseOnMouseEnter: true,   // descomentá si querés pausar al hover
-  },
-  // sin pagination ni navigation
-  loopAdditionalSlides: 3,        // ayuda a que el loop sea más suave
-});
-// Carrusel continuo de 3 imágenes, sin flechas ni puntos
-const softSwiperThree = new Swiper('.soft-swiper.three', {
-  loop: true,
-  allowTouchMove: false,          // sin interacción
-  speed: 2000,                   // más grande = más lento (ms por “paso”)
-  autoplay: {
-    delay: 0,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,      // si querés que pare al hover
-  },
-  slidesPerView: 3,
-  spaceBetween: 24,               // separación entre imágenes
-  breakpoints: {
-    0:   { slidesPerView: 1.1, spaceBetween: 12 },
-    576: { slidesPerView: 2,   spaceBetween: 16 },
-    992: { slidesPerView: 3,   spaceBetween: 24 },
-  },
-  loopAdditionalSlides: 6,        // hace el loop más suave
-});
-// Rellena la tira clonando slides hasta un mínimo (evita huecos en el loop)
-function fillSlides(selector, minSlides = 12) {
-  const wrapper = document.querySelector(`${selector} .swiper-wrapper`);
-  if (!wrapper) return 0;
-  const originals = [...wrapper.children];
-  while (wrapper.children.length < minSlides) {
-    originals.forEach(slide => wrapper.appendChild(slide.cloneNode(true)));
+/// === Carrusel continuo, sin hover, sin interacción, loop infinito ===
+function initAutoCarousel(){
+  const el = document.querySelector('.auto-carousel .swiper-wrapper');
+  if (!el) return;
+
+  // Duplicamos slides para que el loop sea realmente continuo
+  const minSlides = 12; // subí si querés aún más suavidad
+  const originals = Array.from(el.children);
+  while (el.children.length < minSlides) {
+    originals.forEach(node => el.appendChild(node.cloneNode(true)));
   }
-  return wrapper.children.length;
-}
 
-function initSoftSwiperThree() {
-  // 1) Aseguramos cantidad suficiente de slides
-  const total = fillSlides('.soft-swiper.three', 12); // probá 12–16 si querés más margen
-
-  // 2) Iniciamos Swiper con loop suave continuo
-  return new Swiper('.soft-swiper.three', {
+  // Inicia Swiper
+  new Swiper('.auto-carousel', {
     loop: true,
-    allowTouchMove: false,
-    speed: 20000, // más grande = más lento
+    allowTouchMove: false,        // sin interacción de usuario
+    speed: 7000,                 // mayor = más lento (ms por “pasada”)
     autoplay: {
-      delay: 0,
-      disableOnInteraction: false,
-      pauseOnMouseEnter: true,
+      delay: 0,                   // movimiento continuo
+      disableOnInteraction: false
     },
-    slidesPerView: 3,
-    spaceBetween: 24,
-    // clave: darle a Swiper muchas copias internas
-    loopedSlides: total,
-    loopAdditionalSlides: total,
-    watchSlidesProgress: true,
-    breakpoints: {
-      0:   { slidesPerView: 1.1, spaceBetween: 12 },
-      576: { slidesPerView: 2,   spaceBetween: 16 },
-      992: { slidesPerView: 3,   spaceBetween: 24 },
-    },
+    slidesPerView: 'auto',        // usamos el ancho CSS de cada slide
+    spaceBetween: 16,             // coherente con los calc() del CSS
+    loopAdditionalSlides: el.children.length, // copias internas extra
+    watchSlidesProgress: true
   });
 }
 
-// Esperamos a que carguen las imágenes para evitar medir mal anchos
+// Esperá que carguen las imágenes para medir anchos correctos
 document.addEventListener('DOMContentLoaded', () => {
-  const imgs = document.querySelectorAll('.soft-swiper.three img');
+  const imgs = document.querySelectorAll('.auto-carousel img');
+  if (imgs.length === 0) return initAutoCarousel();
   let loaded = 0;
-  const done = () => initSoftSwiperThree();
-
-  if (imgs.length === 0) return done();
   imgs.forEach(img => {
     if (img.complete) {
-      if (++loaded === imgs.length) done();
+      if (++loaded === imgs.length) initAutoCarousel();
     } else {
       img.addEventListener('load', () => {
-        if (++loaded === imgs.length) done();
+        if (++loaded === imgs.length) initAutoCarousel();
       }, { once: true });
     }
   });
