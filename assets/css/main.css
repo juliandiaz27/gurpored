@@ -817,3 +817,141 @@ font-weight: 900;
 @media (min-width: 992px){
   .auto-carousel .swiper-slide{ width: calc(33.333% - 16px); } /* 3 por vista */
 }
+.contacto{
+  background: #fff;
+}
+
+.contacto__row{
+  min-height: 600px;
+  align-items: stretch;
+}
+
+/* Izquierda: padding vertical, alineado al container */
+.contacto__content{
+  display: flex;
+  align-items: center;
+  padding: clamp(64px, 6vw, 112px) 0;
+}
+
+/* “inner” para controlar aire hacia la imagen sin romper container */
+.contacto__inner{
+  width: 100%;
+  padding-right: clamp(24px, 3vw, 72px);
+}
+
+/* Derecha: la imagen ocupa toda la altura */
+.contacto__media{
+  overflow: hidden;
+  position: relative;
+}
+
+.contacto__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🔥 Full-bleed SOLO en desktop:
+   hacemos que esta columna mida 50vw y “salga” del container hacia la derecha */
+@media (min-width: 992px){
+  .contacto__media{
+    flex: 0 0 50vw;
+    max-width: 50vw;
+    margin-right: calc(50% - 50vw);
+  }
+}
+
+/* Mobile: apila */
+@media (max-width: 991.98px){
+  .contacto__row{
+    min-height: auto;
+  }
+
+  .contacto__content{
+    padding: 40px 0;
+  }
+
+  .contacto__inner{
+    padding-right: 0;
+  }
+
+  .contacto__media{
+    height: 320px;
+    margin-right: 0;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+}
+.contacto{
+  background:#fff;
+}
+.contacto__wrap{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+.contacto__title{
+  margin: 0 0 14px 0;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 800;
+  color: var(--brand);
+  font-family: var(--font-heading);
+}
+.contacto__lead{
+  margin: 0 0 36px 0;
+  color: #2f3640;
+  font-size: 14px;
+}
+.contacto__list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+.contacto__item{
+  display:flex;
+  gap:16px;
+}
+.contacto__icon{
+  width:44px;
+  height:44px;
+  background:var(--brand);
+  border-radius:8px;
+  display:grid;
+  place-items:center;
+  flex-shrink:0;
+}
+.contacto__icon i{
+  color:#fff;
+  font-size:20px;
+}
+.contacto__label{
+  font-weight:700;
+  font-size:14px;
+  color:#3f4a5a;
+  margin-bottom:2px;
+}
+.contacto__value{
+  font-size:14px;
+  color: #5f6b7a;
+  text-decoration:none;
+  line-height:1.4;
+  display:block;
+}
+a.contacto__value:hover{ text-decoration: underline; }
+
+.contacto__media{
+  
+  overflow:hidden;
+}
+.contacto__media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
