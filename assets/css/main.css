@@ -11,19 +11,19 @@ html { font-variation-settings: normal; }
 .wapp-float{
   position: fixed;
   right: 4rem;
-  top: 558px;
+  bottom: 84px;
   width: 24px;
   height: 24px;
   z-index: 9999;
   transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
 }
 .wapp-float svg{
-  width: 64%;
-  height: 64%;
+  width: 34%;
+  height: 34%;
   display: block;
 }
 .wapp-float:hover{
-  transform: translateY(-2px) scale(1.03);
+  transform: translateY(-2px) scale(0.9);
   box-shadow: 0 14px 30px rgba(0,0,0,.28);
   filter: saturate(1.1);
 }
@@ -32,7 +32,7 @@ html { font-variation-settings: normal; }
 @media (max-width: 576px){
   .wapp-float{
     right: 1rem;
-    bottom: 14px;
+    bottom: 12px;
     width: 56px;
     height: 56px;
   }
@@ -187,18 +187,42 @@ body{ font-optical-sizing:auto; }
 .hero{ min-height: 88vh; position:relative; }
 .hero .hero-bg{
   position:absolute; inset:0; z-index:-1;
-   background-image: url(../img/imagen-principal.png);
+   background-image: url(/img/imagen-principal.png);
   background-size: cover; background-position: center;
   filter: saturate(1.05) contrast(1.02);
 }
 .hero::after{
   content:""; position:absolute; inset:0;
-  background-image: url(../img/imagen-principal.png);
+  background-image: url(/img/imagen-principal.png);
   background-repeat:no-repeat ;
   background-size: cover;
   z-index:-1;
 }
 .hero h1{ text-shadow: 0 1px 2px rgba(0,0,0,.1); }
+
+
+.jv-agro {
+  background-image: url(/assets/img/jv-agro/banner-jvagro.png);
+  background-size: cover;
+  background-position: center;
+  position: relative; /* necesario */
+  z-index: 1;
+}
+
+.jv-agro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background: rgba(0,0,0,0.1); /* negro con opacidad */
+  z-index: 2;
+}
+
+
+
 
 /* Valores */
 .value-item{
