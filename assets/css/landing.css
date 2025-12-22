@@ -184,7 +184,7 @@ h1,h2,h3,h4,h5,h6,
 
 /* Usá esta clase en el header */
 .gepian{
-  background-image: url(/assets/img/landing/Banner-landing.png);
+  background-image: url(../img/landing/Banner-landing.png);
   background-size: cover;
   background-position: center;
   position: relative;
@@ -805,6 +805,7 @@ a.contacto__value:hover{ text-decoration: underline; }
 .contacto__content{
   max-width: 48%;
   padding: 90px 0;
+  flex-direction: column;
 }
 
 .contacto__title{

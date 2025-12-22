@@ -187,7 +187,7 @@ h1,h2,h3,h4,h5,h6,
 
 /* Usá esta clase en el header */
 .jv-agro{
-  background-image: url(/assets/img/jv-agro/banner-jvagro.png);
+  background-image: url(../img/jv-agro/banner-jvagro.png);
   background-size: cover;
   background-position: center;
   position: relative;

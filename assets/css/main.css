@@ -187,13 +187,13 @@ body{ font-optical-sizing:auto; }
 .hero{ min-height: 88vh; position:relative; }
 .hero .hero-bg{
   position:absolute; inset:0; z-index:-1;
-   background-image: url(/img/imagen-principal.png);
+   background-image: url(../img/imagen-principal.png);
   background-size: cover; background-position: center;
   filter: saturate(1.05) contrast(1.02);
 }
 .hero::after{
   content:""; position:absolute; inset:0;
-  background-image: url(/img/imagen-principal.png);
+  background-image: url(../img/imagen-principal.png);
   background-repeat:no-repeat ;
   background-size: cover;
   z-index:-1;
@@ -202,7 +202,7 @@ body{ font-optical-sizing:auto; }
 
 
 .jv-agro {
-  background-image: url(/assets/img/jv-agro/banner-jvagro.png);
+  background-image: url(../img/jv-agro/banner-jvagro.png);
   background-size: cover;
   background-position: center;
   position: relative; /* necesario */
