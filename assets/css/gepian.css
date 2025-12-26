@@ -475,16 +475,7 @@ h1,h2,h3,h4,h5,h6,
 }
 a.contacto__value:hover{ text-decoration: underline; }
 
-.contacto__media{
-  
-  overflow:hidden;
-}
-.contacto__media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+
 
 /* -------------------------
    13) COMPROMISO (Figma)
@@ -620,11 +611,7 @@ a.contacto__value:hover{ text-decoration: underline; }
     grid-template-columns: 1fr;
     min-height:auto;
   }
-  .contacto__media{
-    border-left: 0;
-    border-top: 2px solid var(--brand);
-    height: 320px;
-  }
+
   
 
   .compromiso__wrap{
@@ -825,26 +812,13 @@ a.contacto__value:hover{ text-decoration: underline; }
 }
 
 /* Derecha: la imagen ocupa toda la altura */
-.contacto__media{
-  overflow: hidden;
-  position: relative;
-}
 
-.contacto__media img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+
 
 /* 🔥 Full-bleed SOLO en desktop:
    hacemos que esta columna mida 50vw y “salga” del container hacia la derecha */
 @media (min-width: 992px){
-  .contacto__media{
-    flex: 0 0 50vw;
-    max-width: 50vw;
-    margin-right: calc(50% - 50vw);
-  }
+ 
 }
 
 /* Mobile: apila */
@@ -861,10 +835,71 @@ a.contacto__value:hover{ text-decoration: underline; }
     padding-right: 0;
   }
 
-  .contacto__media{
-    height: 320px;
-    margin-right: 0;
-    max-width: 100%;
-    flex: 0 0 auto;
+  
+}
+
+/* =========================
+   CONTACTO GEPIAN – estable (sin overflow)
+========================= */
+
+/* =========================
+   CONTACTO GEPIAN – estable (sin overflow)
+   (PEGAR AL FINAL DEL CSS)
+========================= */
+
+.contacto--gepian{
+  position: relative;
+  background: #fff;
+  overflow-x: clip;        /* evita scroll horizontal por rounding */
+  min-height: 600px;
+}
+
+.contacto--gepian .contacto__row{
+  min-height: 600px;
+}
+
+/* Izquierda */
+.contacto--gepian .contacto__content{
+  display: flex;
+  align-items: center;
+  padding: clamp(64px, 6vw, 112px) 0;
+}
+
+.contacto--gepian .contacto__inner{
+  width: 100%;
+  padding-right: clamp(24px, 3vw, 72px);
+}
+
+/* Derecha: background full-bleed */
+.contacto--gepian .contacto__media--gepian{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background-image: url("../img/Gepian/contacto.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Mobile */
+@media (max-width: 991.98px){
+  .contacto--gepian{
+    min-height: auto;
+  }
+
+  .contacto--gepian .contacto__media--gepian{
+    position: relative;
+    width: 100%;
+    height: 280px;
+  }
+
+  .contacto--gepian .contacto__content{
+    padding: 40px 0;
+  }
+
+  .contacto--gepian .contacto__inner{
+    padding-right: 0;
   }
 }

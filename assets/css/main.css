@@ -572,7 +572,8 @@ font-weight: 900;
 
 /* Pin rojo */
 .loc-pin{
-  
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Card del mapa */
@@ -756,15 +757,11 @@ font-weight: 900;
 }
 /* Botón del hero: borde blanco, fondo transparente */
 .btn-hero{
- 
   --hero-border: #fff;
   color: #fff;
   background: transparent;
   border-color: var(--hero-border);
   transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
-}
-.boton{
-  width: 60%;
 }
 /* Hover: fondo blanco, texto color marca */
 .btn-hero:hover,
@@ -847,26 +844,12 @@ font-weight: 900;
 }
 
 /* Derecha: la imagen ocupa toda la altura */
-.contacto__media{
-  overflow: hidden;
-  position: relative;
-}
 
-.contacto__media img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
 
 /* 🔥 Full-bleed SOLO en desktop:
    hacemos que esta columna mida 50vw y “salga” del container hacia la derecha */
 @media (min-width: 992px){
-  .contacto__media{
-    flex: 0 0 50vw;
-    max-width: 100%;
-    margin-right: calc(50% - 50vw);
-  }
+  
 }
 
 /* Mobile: apila */
@@ -883,12 +866,7 @@ font-weight: 900;
     padding-right: 0;
   }
 
-  .contacto__media{
-    height: 320px;
-    margin-right: 0;
-    max-width: 100%;
-    flex: 0 0 auto;
-  }
+ 
 }
 .contacto{
   background:#fff;
@@ -953,14 +931,7 @@ font-weight: 900;
 a.contacto__value:hover{ text-decoration: underline; }
 
 .contacto__media{
-  
-  overflow:hidden;
-}
-.contacto__media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
+  background-image: url(/assets/img/contacto.png);
 }
 
 /* =========================================================
@@ -1142,10 +1113,7 @@ a.contacto__value:hover{ text-decoration: underline; }
     font-size: 0.85rem !important;
   }
   
-  .contacto__media {
-    height: 280px !important;
-    margin-top: 1rem;
-  }
+ 
 }
 
 /* Footer responsive */
@@ -1219,6 +1187,39 @@ a.contacto__value:hover{ text-decoration: underline; }
   .gap-5 {
     gap: 1.25rem !important;
   }
+  
+  /* Evitar overflow horizontal */
+  body {
+    overflow-x: hidden;
+  }
+  
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  [class*="col-"] {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Textos más legibles */
+  p, .text-body-secondary {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Títulos más pequeños pero legibles */
+  h2.section-title {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Botones más pequeños */
+  .btn-lg {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
 }
 
 /* Mejoras para tablets */
@@ -1240,3 +1241,231 @@ a.contacto__value:hover{ text-decoration: underline; }
   }
 }
 
+/* Correcciones adicionales para mobile */
+@media (max-width: 575.98px) {
+  /* Navbar logo */
+  .navbar-brand img {
+    max-height: 35px;
+  }
+  
+  /* Hero mejoras */
+  .hero .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero h1 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero p {
+    margin-bottom: 1rem !important;
+  }
+  
+  /* Sección Quiénes Somos */
+  .col-lg-8 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  /* Empresas - mejor espaciado */
+  .company-item {
+    margin-bottom: 2rem;
+  }
+  
+  .logo-box {
+    margin-bottom: 1rem;
+  }
+  
+  /* Visión - mejor layout */
+  #vision .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  #vision .col-lg-6 {
+    margin-bottom: 2rem;
+  }
+  
+  /* Valores - mejor alineación */
+  .value-item {
+    padding: 1rem !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  .custom-icon {
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+  }
+  
+  .custom-icon img {
+    width: 32px !important;
+    height: 32px !important;
+    margin-right: 0 !important;
+  }
+  
+  .custom-icon p {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* Ubicación */
+  .location-list li {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .map-card {
+    margin-top: 1.5rem;
+  }
+  
+  /* Contacto - mejor padding */
+  .contacto__content {
+    padding: 2rem 1rem !important;
+  }
+  
+  .contacto__inner {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  
+  .contacto__title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .contacto__lead {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .contacto__list {
+    gap: 1rem !important;
+  }
+  
+  .contacto__item {
+    gap: 0.75rem !important;
+    align-items: flex-start !important;
+  }
+  
+  .contacto__icon {
+    width: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0;
+  }
+  
+  .contacto__icon i {
+    font-size: 16px !important;
+  }
+  
+  .contacto__label {
+    font-size: 0.8rem !important;
+    margin-bottom: 0.25rem !important;
+  }
+  
+  .contacto__value {
+    font-size: 0.85rem !important;
+    word-break: break-word;
+  }
+  
+  
+  
+  /* Footer mejoras */
+  .footer .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  .footer img {
+    max-width: 100px !important;
+  }
+  
+  .footer .small {
+    font-size: 0.7rem !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* WhatsApp flotante */
+  .wapp-float {
+    right: 1rem !important;
+    bottom: 1rem !important;
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .wapp-float img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  /* Back to top */
+  .to-top {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1.1rem !important;
+    bottom: 5.5rem !important;
+  }
+}
+
+.contacto-mobile{
+  width: 100%;
+  padding: 0px  ;
+  margin: 0;
+}
+
+.contacto{
+  position: relative;
+  background: #fff;
+  overflow-x: clip; /* blindaje final */
+  min-height: 600px;
+}
+
+/* FILA IZQUIERDA */
+.contacto__row{
+  min-height: 600px;
+}
+
+.contacto__content{
+  display: flex;
+  align-items: center;
+  padding: clamp(64px, 6vw, 112px) 0;
+}
+
+.contacto__inner{
+  width: 100%;
+  padding-right: clamp(24px, 3vw, 72px);
+}
+
+/* IMAGEN DERECHA */
+.contacto__media{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw;
+  height: 100%;
+  background-image: url("../img/contacto.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Mobile: imagen abajo */
+@media (max-width: 991.98px){
+  .contacto{
+    min-height: auto;
+  }
+
+  .contacto__media{
+    position: relative;
+    width: 100%;
+    height: 280px;
+  }
+
+  .contacto__content{
+    padding: 40px 0;
+  }
+
+  .contacto__inner{
+    padding-right: 0;
+  }
+}
